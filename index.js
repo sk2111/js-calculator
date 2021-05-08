@@ -56,7 +56,7 @@ const handleButtonClick = (event, selectedButton) => {
 };
 
 
-document.body.addEventListener('keyup', (event) => {
+document.addEventListener('keyup', (event) => {
     const value = event.key;
     if (calcButtons.includes(value)) {
         handleButtonClick(null, value);
