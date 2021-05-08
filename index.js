@@ -1,5 +1,6 @@
 
-const calcButtons = [7, 8, 9, '+', 4, 5, 6, '-', 1, 2, 3, '*', 'c', 0, '=', '/'];
+const calcButtons = ['7', '8', '9', '+', '4', '5', '6', '-',
+    '1', '2', '3', '*', 'c', '0', '=', '/'];
 let currentEquation = '';
 //Helper to create DOM node
 const createDOMNode = (tagName, content = '', attribute = []) => {
@@ -53,3 +54,14 @@ const handleButtonClick = (event, selectedButton) => {
         resultDisplayNode.innerText = '';
     }
 };
+
+
+document.body.addEventListener('keyup', (event) => {
+    const value = event.key;
+    if (calcButtons.includes(value)) {
+        handleButtonClick(null, value);
+    }
+    else {
+        alert('Invalid key');
+    }
+});
